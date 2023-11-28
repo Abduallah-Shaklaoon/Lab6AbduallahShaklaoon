@@ -31,18 +31,13 @@ console.log(typeof duration)
 // INSERT YOUR CODE HERE
 
 function recalculate(){
-    let costLabel = document.getElementById("calculated-cost").innerHTML;
+    let costLabel = document.getElementById("calculated-cost");
     if(modelName == "Model XYZ"){
-        costLabel = duration*100;
-        console.log(costLabel)
-        console.log(typeof costLabel)
+        costLabel.innerHTML = (duration*100.00).toFixed(2);
     }
     else if(modelName == "Model CPRG"){
-        costLabel = duration*213;
+        costLabel.innerHTML = (duration*213.00).toFixed(2);
     }
-    document.getElementById("calculated-cost").innerHTML = costLabel;
-    console.log(costLabel)
-    console.log(typeof costLabel)
 }
 
 
@@ -64,14 +59,14 @@ function recalculate(){
 let modelButton = document.getElementById("model-button");
 modelButton.addEventListener("click", changeModel);
 function changeModel(){
-    modelName = document.getElementById("model-text").innerHTML;
+    let modelText = document.getElementById("model-text");
     if(modelName == "Model XYZ"){
         modelName = "Model CPRG";
     }
     else if (modelName == "Model CPRG"){
         modelName = "Model XYZ";
     }
-    document.getElementById("model-text").innerHTML = modelName
+    modelText.innerHTML = modelName
     recalculate();
 }
 
@@ -96,8 +91,9 @@ function changeModel(){
 let durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
 function changeDuration(){
+    let durationText = document.getElementById("duration-text") 
     duration = prompt("Please enter how long your stay will be:");
-    document.getElementById("duration-text").innerHTML = duration
+    durationText.innerHTML = duration
     recalculate();
 }
 
