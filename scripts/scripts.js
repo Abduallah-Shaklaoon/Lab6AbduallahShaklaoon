@@ -10,8 +10,11 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-
-
+let modelName = document.getElementById("model-text").innerHTML;
+console.log(modelName)
+let duration = document.getElementById("duration-text").innerHTML;
+console.log(duration)
+console.log(typeof duration)
 
 
 
@@ -27,7 +30,20 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
-
+function recalculate(){
+    let costLabel = document.getElementById("calculated-cost").innerHTML;
+    if(modelName == "Model XYZ"){
+        costLabel = duration*100;
+        console.log(costLabel)
+        console.log(typeof costLabel)
+    }
+    else if(modelName == "Model CPRG"){
+        costLabel = duration*213;
+    }
+    document.getElementById("calculated-cost").innerHTML = costLabel;
+    console.log(costLabel)
+    console.log(typeof costLabel)
+}
 
 
 
@@ -42,10 +58,22 @@ You are encouraged to use the provided naming convention for ease of review.
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-    // modelButton.addEventListener("click", changeModel);
+
 
 // INSERT YOUR CODE HERE
-
+let modelButton = document.getElementById("model-button");
+modelButton.addEventListener("click", changeModel);
+function changeModel(){
+    modelName = document.getElementById("model-text").innerHTML;
+    if(modelName == "Model XYZ"){
+        modelName = "Model CPRG";
+    }
+    else if (modelName == "Model CPRG"){
+        modelName = "Model XYZ";
+    }
+    document.getElementById("model-text").innerHTML = modelName
+    recalculate();
+}
 
 
 
@@ -65,5 +93,12 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 
+let durationButton = document.getElementById("duration-button");
+durationButton.addEventListener("click", changeDuration);
+function changeDuration(){
+    duration = prompt("Please enter how long your stay will be:");
+    document.getElementById("duration-text").innerHTML = duration
+    recalculate();
+}
 
 
