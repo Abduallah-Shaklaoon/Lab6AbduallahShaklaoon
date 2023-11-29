@@ -11,10 +11,7 @@ You are encouraged to use the provided naming convention for ease of review.
 
 // INSERT YOUR CODE HERE
 let modelName = document.getElementById("model-text").innerHTML;
-console.log(modelName)
 let duration = document.getElementById("duration-text").innerHTML;
-console.log(duration)
-console.log(typeof duration)
 
 
 
@@ -33,10 +30,10 @@ console.log(typeof duration)
 function recalculate(){
     let costLabel = document.getElementById("calculated-cost");
     if(modelName == "Model XYZ"){
-        costLabel.innerHTML = (duration*100.00).toFixed(2);
+        costLabel.innerHTML = (duration*100).toFixed(2);
     }
     else if(modelName == "Model CPRG"){
-        costLabel.innerHTML = (duration*213.00).toFixed(2);
+        costLabel.innerHTML = (duration*213).toFixed(2);
     }
 }
 
