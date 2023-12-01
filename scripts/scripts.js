@@ -63,7 +63,7 @@ function changeModel(){
     else if (modelName == "Model CPRG"){
         modelName = "Model XYZ";
     }
-    modelText.innerHTML = modelName
+    modelText.innerHTML = modelName;
     recalculate();
 }
 
@@ -88,9 +88,9 @@ function changeModel(){
 let durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
 function changeDuration(){
-    let durationText = document.getElementById("duration-text") 
+    let durationText = document.getElementById("duration-text");
     duration = prompt("Please enter how long your stay will be:");
-    durationText.innerHTML = duration
+    durationText.innerHTML = duration;
     recalculate();
 }
 
